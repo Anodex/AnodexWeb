@@ -1,198 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Anodex is a local-first AI workspace built for privacy, speed, and total ownership." />
-  <meta name="theme-color" content="#040713" />
-  <title>Anodex | Local AI. Full Control.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="favicon.png" sizes="512x512" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Anodex brings local AI, project tools, research, and automation to your desktop. Stay connected with Anodex Mobile. Download the latest releases." />
+  <meta name="theme-color" content="#09090e" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Anodex — Your AI. Your machine." />
+  <meta property="og:description" content="A local-first AI workspace for real work. Build, research, and automate on your desktop. Stay in command with Anodex Mobile." />
+  <title>Anodex — Your AI. Your machine.</title>
+  <link rel="canonical" href="https://www.anodex.dev/" />
+  <link rel="icon" type="image/png" href="assets/anodex-icon.png" />
+  <link rel="apple-touch-icon" href="assets/anodex-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;550;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/anodex-mark-large.png" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="script.js"></script>
 </head>
 <body>
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-orb orb-a" aria-hidden="true"></div>
-  <div class="bg-orb orb-b" aria-hidden="true"></div>
-  <div class="bg-orb orb-c" aria-hidden="true"></div>
-
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="Anodex home">
-      <img src="assets/anodex-logo.png" alt="Anodex logo" class="brand-mark" />
-      <span>Anodex</span>
-    </a>
-
-    <nav class="topnav" aria-label="Primary">
-      <a href="#features">Features</a>
-      <a href="#why">Why Anodex</a>
-      <a href="#status">Status</a>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" /></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5" /></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m7 6-6 6 6 6m10-12 6 6-6 6M14 3l-4 18" /></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 4v3" /></symbol>
+    <symbol id="i-desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8m-4-4v4" /></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3" /><path d="M10 5h4m-3 14h2" /></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v10H3Z" /></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M8 5H4v15h15v-5M13 4h7v7M10 14 20 4" /></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5" /><path d="M4 10h3m-3 4h3m10-4h3m-3 4h3M10 4v3m4-3v3m-4 10v3m4-3v3" /></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.4-8A5.5 5.5 0 0 1 17 9.6 3.7 3.7 0 0 1 16.8 18Z" /></symbol>
+  </defs></svg>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a href="#" class="brand" aria-label="Anodex home"><img src="assets/anodex-mark.png" alt="" width="38" height="38" /><span class="wordmark">ANODE<span class="wordmark-x">X</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#workspace">Workspace</a><a href="#mobile">Mobile</a><a href="https://github.com/Anodex/Anodex" target="_blank" rel="noopener noreferrer">GitHub <svg class="icon tiny"><use href="#i-external" /></svg></a></nav>
+      <a class="button button-small header-download" href="#downloads">Get Anodex <svg class="icon"><use href="#i-download" /></svg></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav" hidden><span></span><span></span></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#workspace">Workspace</a><a href="#mobile">Anodex Mobile</a><a href="#downloads">Downloads</a><a href="https://github.com/Anodex/Anodex" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav>
   </header>
-
-  <main id="top">
-    <section class="hero section reveal">
-      <div class="hero-copy">
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Local-first desktop AI
-        </div>
-
-        <div class="hero-logo-shell">
-          <img src="assets/anodex-logo.png" alt="Anodex logo" class="hero-logo" />
-        </div>
-
-        <h1>Local AI. Full Control.</h1>
-        <p class="lede">
-          Anodex is a local-first AI workspace built for privacy, speed, and total ownership.
-        </p>
-
-        <div class="hero-actions">
-          <!-- Update this GitHub URL when the repository is live -->
-          <a class="btn btn-primary" href="https://github.com/Anodex/Anodex.git" target="_blank" rel="noreferrer">
-            View on GitHub
-          </a>
-          <a class="btn btn-secondary" href="#status">
-            Coming Soon
-          </a>
-        </div>
-
-        <div class="hero-metrics" aria-label="Anodex highlights">
-          <div class="metric-card">
-            <span class="metric-label">Privacy</span>
-            <strong>Runs on your machine</strong>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Stack</span>
-            <strong>Ollama-ready</strong>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Workflow</span>
-            <strong>Projects, chat, files</strong>
-          </div>
-        </div>
-      </div>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-brand" aria-hidden="true"><img class="hero-brand-mark" src="assets/anodex-mark-large.png" width="2048" height="2048" alt="" fetchpriority="high" /></div>
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-inner wrap"><div class="hero-copy">
+        <a class="hero-release" href="#downloads"><span class="mini-dot cyan"></span><span id="hero-release-label">Anodex desktop + Mobile</span><svg class="icon tiny"><use href="#i-arrow" /></svg></a>
+        <p class="eyebrow"><span class="small-line"></span> THE LOCAL-FIRST AI WORKSPACE</p>
+        <h1 id="hero-title">Your AI.<br />Your machine.<br /><span class="gradient-text">Your move.</span></h1>
+        <p class="hero-description">Think, build, research, and automate with AI that works alongside your projects. Run models locally, or connect the cloud models you choose.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#downloads">Download Anodex <svg class="icon"><use href="#i-download" /></svg></a><a class="text-link" href="#workspace">Explore the workspace <svg class="icon"><use href="#i-arrow" /></svg></a></div>
+        <p class="hero-note">No account needed for the core desktop experience.</p>
+      </div><div class="hero-art-caption"><span aria-hidden="true">+</span><span>INTELLIGENCE. ON YOUR TERMS.</span><button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></div></div>
     </section>
-
-    <section id="features" class="section reveal">
-      <div class="section-heading">
-        <span class="section-kicker">Features</span>
-        <h2>Everything is tuned for local power, clarity, and trust.</h2>
+    <div class="principles wrap" aria-label="Anodex essentials"><span><i class="mini-dot cyan"></i> Local models</span><span><i class="mini-dot blue"></i> Real project context</span><span><i class="mini-dot green"></i> Tools with oversight</span><a href="#mobile"><svg class="icon"><use href="#i-phone" /></svg> A mobile companion <svg class="icon tiny"><use href="#i-arrow" /></svg></a></div>
+    <section id="workspace" class="section wrap" aria-labelledby="workspace-title">
+      <div class="section-heading" data-reveal><div><p class="eyebrow">01 / THE DESKTOP WORKSPACE</p><h2 id="workspace-title">More than a conversation.<br /><span class="muted-heading">A place to get things done.</span></h2></div><p>Give your ideas a workspace. Anodex brings your files, tools, and project memory into the same conversation.</p></div>
+      <div class="capability" data-reveal>
+        <div class="workflow-tabs" role="tablist" aria-label="Explore Anodex workflows"><button id="tab-build" class="workflow-tab" type="button" role="tab" aria-selected="true" aria-controls="workflow-panel" data-workflow="build"><svg class="icon"><use href="#i-code" /></svg> Build</button><button id="tab-research" class="workflow-tab" type="button" role="tab" aria-selected="false" aria-controls="workflow-panel" tabindex="-1" data-workflow="research"><svg class="icon"><use href="#i-search" /></svg> Research</button><button id="tab-automate" class="workflow-tab" type="button" role="tab" aria-selected="false" aria-controls="workflow-panel" tabindex="-1" data-workflow="automate"><svg class="icon"><use href="#i-clock" /></svg> Automate</button><span class="demo-label">WHAT IT ACTUALLY DOES</span></div>
+        <div id="workflow-panel" class="capability-body" role="tabpanel" aria-labelledby="tab-build" tabindex="0">
+          <div class="capability-copy">
+            <h3 id="wf-title">From an idea to a working project.</h3>
+            <p id="wf-description">Work directly with your files, code, and project conventions. Let Anodex help make changes, run checks, and bring the results back for review.</p>
+            <ul class="capability-list" id="wf-points">
+              <li><svg class="icon"><use href="#i-check" /></svg><span>Reads your files, structure, and project instructions</span></li>
+              <li><svg class="icon"><use href="#i-check" /></svg><span>Runs commands and checks inside a scope you set</span></li>
+              <li><svg class="icon"><use href="#i-check" /></svg><span>Keeps changes visible through diffs and checkpoints</span></li>
+            </ul>
+            <p class="capability-foot" id="wf-note">Scoped tools. Reviewable changes. You stay in control.</p>
+          </div>
+          <figure class="workspace-map" aria-label="How Anodex brings your workspace together">
+            <div class="device-boundary">
+              <div class="map-heading"><svg class="icon"><use href="#i-desktop" /></svg><span>YOUR DESKTOP</span><span class="map-tag">Your workspace</span></div>
+              <div class="map-core"><img src="assets/anodex-mark.png" alt="" width="42" height="42" /><div><strong>Anodex</strong><span>Context. Tools. Your chosen model.</span></div></div>
+              <div class="map-nodes">
+                <div class="map-node" id="n-files"><svg class="icon"><use href="#i-folder" /></svg><span>Files &amp; projects</span></div>
+                <div class="map-node" id="n-web"><svg class="icon"><use href="#i-search" /></svg><span>Research</span></div>
+                <div class="map-node" id="n-tools"><svg class="icon"><use href="#i-code" /></svg><span>Tools &amp; commands</span></div>
+                <div class="map-node" id="n-sched"><svg class="icon"><use href="#i-clock" /></svg><span>Scheduled work</span></div>
+              </div>
+              <div class="map-local map-node" id="n-model"><svg class="icon"><use href="#i-chip" /></svg><div><strong>Local model</strong><span>Inference on your hardware</span></div><span class="mini-dot cyan"></span></div>
+            </div>
+            <div class="map-external"><span class="external-connector" aria-hidden="true"></span><svg class="icon"><use href="#i-cloud" /></svg><div><strong>Cloud models &amp; connected services</strong><span>Optional. Request data goes to your chosen provider.</span></div></div>
+          </figure>
+        </div>
       </div>
-
       <div class="feature-grid">
-        <article class="glass-card feature-card">
-          <span class="card-icon">01</span>
-          <h3>Local-first AI</h3>
-          <p>Keep inference, context, and workflow data close to your hardware instead of handing it off to the cloud.</p>
-        </article>
-        <article class="glass-card feature-card">
-          <span class="card-icon">02</span>
-          <h3>Private by design</h3>
-          <p>Built around ownership, local storage, and a privacy-first model that respects your machine.</p>
-        </article>
-        <article class="glass-card feature-card">
-          <span class="card-icon">03</span>
-          <h3>Project-based workspace</h3>
-          <p>Organize conversations, files, and tasks around focused projects that stay easy to revisit.</p>
-        </article>
-        <article class="glass-card feature-card">
-          <span class="card-icon">04</span>
-          <h3>Built for creators and developers</h3>
-          <p>Designed for fast thinking, technical workflows, and creative iteration without friction.</p>
-        </article>
-        <article class="glass-card feature-card">
-          <span class="card-icon">05</span>
-          <h3>Ollama-ready</h3>
-          <p>Ready to pair with local models so you can run powerful AI experiences on your own stack.</p>
-        </article>
-        <article class="glass-card feature-card">
-          <span class="card-icon">06</span>
-          <h3>Clean futuristic UI</h3>
-          <p>Glass surfaces, glowing edges, and a focused layout keep the interface modern without clutter.</p>
-        </article>
+        <article data-spotlight data-reveal><span class="feature-number">01</span><h3>Your model, your choice.</h3><p>Run GGUF models on your own hardware. Connect a cloud provider when you want another option.</p></article>
+        <article data-spotlight data-reveal><span class="feature-number">02</span><h3>Context that stays with you.</h3><p>Keep project instructions, notes, skills, and working memory together, across conversations.</p></article>
+        <article data-spotlight data-reveal><span class="feature-number">03</span><h3>Capable. Accountable.</h3><p>Let agents work with files and tools. Review plans, approvals, and diffs as the work moves forward.</p></article>
       </div>
     </section>
-
-    <section id="why" class="section reveal">
-      <div class="section-heading">
-        <span class="section-kicker">Why Anodex</span>
-        <h2>Built to run where your work already lives: on your machine.</h2>
-      </div>
-
-      <div class="why-layout">
-        <div class="glass-card why-copy">
-          <p>
-            Anodex is designed for users who want AI without surrendering their files, context, or control.
-            It runs locally, avoids cloud dependency, and keeps your projects grounded in a workspace you own.
-          </p>
-          <p>
-            That makes it a strong fit for local models, private chats, file-aware workflows, and focused daily
-            use on a desktop you trust.
-          </p>
-          <ul class="checklist">
-            <li>Runs locally on the user's machine</li>
-            <li>No cloud dependency for core usage</li>
-            <li>Built for files, chat, and workflow memory</li>
-          </ul>
+    <section id="mobile" class="mobile-section" aria-labelledby="mobile-title"><div class="mobile-layout wrap">
+      <div class="mobile-copy" data-reveal><p class="eyebrow">02 / ANODEX MOBILE</p><h2 id="mobile-title">Step away.<br /><span class="gradient-text">Stay in command.</span></h2><p class="section-description">Your desktop does the work. Your phone keeps you in the loop. Anodex Mobile is the Android companion for the moments you’re away from your desk.</p><ul class="mobile-features"><li><span>01</span><div><h3>See what needs you.</h3><p>Check conversations, agent runs, and scheduled work.</p></div></li><li><span>02</span><div><h3>Make the call.</h3><p>Review plans and tool approvals with context.</p></div></li><li><span>03</span><div><h3>Keep things moving.</h3><p>Send instructions, start a bounded task, or stop a run.</p></div></li></ul><a class="text-link" href="#mobile-download">Get Anodex Mobile <svg class="icon"><use href="#i-arrow" /></svg></a></div>
+      <figure class="connection-map" data-reveal aria-label="Anodex Mobile connects directly to your desktop">
+        <p class="connection-eyebrow">TWO DEVICES. ONE WORKSPACE.</p>
+        <div class="connection-endpoints">
+          <div class="endpoint"><svg class="icon endpoint-icon"><use href="#i-desktop" /></svg><strong>Your desktop</strong><span>Run the work</span></div>
+          <div class="encrypted-bridge" aria-label="Encrypted, authenticated link"><span></span><svg class="icon"><use href="#i-lock" /></svg><span></span></div>
+          <div class="endpoint"><svg class="icon endpoint-icon"><use href="#i-phone" /></svg><strong>Your phone</strong><span>Stay in command</span></div>
         </div>
-
-        <aside class="glass-card why-panel">
-          <div class="panel-line">
-            <span class="panel-label">Architecture</span>
-            <strong>Local-first</strong>
-          </div>
-          <div class="panel-line">
-            <span class="panel-label">Data flow</span>
-            <strong>Private and contained</strong>
-          </div>
-          <div class="panel-line">
-            <span class="panel-label">Model support</span>
-            <strong>Ready for local models</strong>
-          </div>
-          <div class="panel-glow" aria-hidden="true"></div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="status" class="section reveal">
-      <div class="section-heading">
-        <span class="section-kicker">Status</span>
-        <h2>Progress is underway and the public release is getting closer.</h2>
-      </div>
-
-      <div class="status-grid">
-        <article class="glass-card status-card">
-          <span class="status-badge live">In active development</span>
-          <p>Core experience, visual language, and local-first workflow foundations are actively being refined.</p>
-        </article>
-        <article class="glass-card status-card">
-          <span class="status-badge soon">Public release coming soon</span>
-          <p>The initial public release is being prepared with a focus on polish, reliability, and a clean first run.</p>
-        </article>
-      </div>
-    </section>
+        <div class="connection-promise"><span class="mini-dot cyan"></span> Direct. Encrypted. No Anodex relay.</div>
+        <div class="connection-routes"><span>Same Wi-Fi</span><span>Private VPN</span><span>Secure remote route</span></div>
+        <figcaption>You choose the route.<br />Your desktop stays at the center.</figcaption>
+      </figure>
+    </div></section>
+    <section class="ownership wrap" aria-labelledby="ownership-title" data-reveal><div><svg class="icon ownership-icon"><use href="#i-lock" /></svg><h2 id="ownership-title">Private by design.<br />Clear about the boundaries.</h2></div><div class="ownership-detail"><h3>Your devices connect directly.</h3><p>Mobile pairs with your desktop over an encrypted, authenticated connection. Use the same Wi-Fi, your private VPN, or a secure remote route you configure. No Anodex content relay.</p></div><div class="ownership-detail"><h3>You choose where models run.</h3><p>Local models run on your desktop. When you choose a cloud model or connected service, that provider receives the information needed for the request.</p></div></section>
+    <section id="downloads" class="download-section section wrap" aria-labelledby="download-title"><div class="download-heading" data-reveal><p class="eyebrow">03 / MAKE IT YOURS</p><h2 id="download-title">Your next move starts here.</h2><p>The latest Anodex releases, direct from GitHub.</p></div><div class="download-grid">
+      <article class="download-card" data-release-card="desktop" data-spotlight data-reveal><div class="download-card-top"><img src="assets/anodex-icon.png" alt="" width="64" height="64" loading="lazy" /><span class="release-badge" data-release-channel="desktop">Desktop</span></div><h3>Anodex</h3><p class="download-description">The full workspace, on your computer.</p><div class="release-meta" data-release-meta="desktop" aria-live="polite">Current releases on GitHub</div><div class="platform-downloads" id="desktop-assets"><a class="platform-link" data-platform="windows" href="https://github.com/Anodex/Anodex/releases/latest"><span class="platform-name">Windows <small>View releases</small></span><svg class="icon"><use href="#i-download" /></svg></a><a class="platform-link" data-platform="mac" href="https://github.com/Anodex/Anodex/releases/latest"><span class="platform-name">macOS <small>Check architecture on GitHub</small></span><svg class="icon"><use href="#i-download" /></svg></a><a class="platform-link" data-platform="linux" href="https://github.com/Anodex/Anodex/releases/latest"><span class="platform-name">Linux <small>View releases</small></span><svg class="icon"><use href="#i-download" /></svg></a></div><p class="platform-note">Windows is currently tested. macOS and Linux builds are available for testing.</p><a class="release-notes text-link" data-release-notes="desktop" href="https://github.com/Anodex/Anodex/releases/latest" target="_blank" rel="noopener noreferrer">Release notes <svg class="icon tiny"><use href="#i-external" /></svg></a></article>
+      <article class="download-card" id="mobile-download" data-release-card="mobile" data-spotlight data-reveal><div class="download-card-top"><div class="mobile-download-icon"><svg class="icon"><use href="#i-phone" /></svg></div><span class="release-badge" data-release-channel="mobile">Android companion</span></div><h3>Anodex Mobile</h3><p class="download-description">Your desktop connection, in your pocket.</p><div class="release-meta" data-release-meta="mobile" aria-live="polite">Current releases on GitHub</div><div class="platform-downloads" id="mobile-assets"><a class="platform-link" data-platform="android" href="https://github.com/Anodex/anodex-mobile/releases"><span class="platform-name">Android <small>View releases</small></span><svg class="icon"><use href="#i-download" /></svg></a></div><div class="mobile-requirements"><span><svg class="icon"><use href="#i-check" /></svg> Android 8.0 or newer</span><span><svg class="icon"><use href="#i-check" /></svg> A paired desktop running Anodex</span></div><p class="platform-note">Install the APK on your phone, then pair it with your desktop. Mobile is a companion to the desktop app.</p><a class="release-notes text-link" data-release-notes="mobile" href="https://github.com/Anodex/anodex-mobile/releases" target="_blank" rel="noopener noreferrer">Release notes <svg class="icon tiny"><use href="#i-external" /></svg></a></article>
+    </div><p class="release-status" id="release-status" role="status">Download links open the official GitHub releases.</p><noscript><p class="noscript-note">JavaScript is off. The buttons above open the official release pages, where you can choose the latest installer.</p></noscript></section>
+    <section class="faq wrap" aria-label="Before you download" data-reveal><h2>A few things to know.</h2><div class="faq-list"><details><summary>Do I need a cloud account?<span aria-hidden="true">+</span></summary><p>No account is needed for the core desktop experience. Download a local model in Anodex, or add an existing GGUF file. Cloud providers are optional and use your own credentials.</p></details><details><summary>Can Mobile work away from home?<span aria-hidden="true">+</span></summary><p>Yes, when your phone can reach your running desktop through a private VPN or a secure remote route you configure. The desktop and phone connect directly; Anodex does not provide a content relay.</p></details><details><summary>Does my desktop need to stay on?<span aria-hidden="true">+</span></summary><p>Yes. Your desktop runs local models and tools and connects to any cloud provider you choose. Anodex must remain open and reachable for Mobile to use them. Scheduled desktop tasks also run while the app is open.</p></details><details><summary>Where can I see what it looks like?<span aria-hidden="true">+</span></summary><p>Download the current desktop or Android build to explore the interface. The GitHub release notes describe what changed in each version.</p></details></div></section>
   </main>
-
-  <footer class="footer">
-    <div>
-      <span class="footer-brand">Anodex</span>
-      <p>Local AI. Full Control.</p>
-    </div>
-
-    <div class="footer-links">
-      <!-- Update this GitHub URL when the repository is live -->
-      <a href="https://github.com/Anodex/Anodex.git" target="_blank" rel="noreferrer">GitHub</a>
-      <!-- Update this X/Twitter URL when the profile is ready -->
-      <a href="https://x.com/AnodexAI" target="_blank" rel="noreferrer">X / Twitter</a>
-      <!-- Update this Instagram URL when the profile changes -->
-      <a href="https://www.instagram.com/anodex_ai/" target="_blank" rel="noreferrer">Instagram</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="site-footer wrap"><div><a href="#" class="brand"><img src="assets/anodex-mark.png" alt="" width="32" height="32" /><span class="wordmark">ANODE<span class="wordmark-x">X</span></span></a><p>Private intelligence for the work that matters.</p></div><div class="footer-links"><a href="https://github.com/Anodex/Anodex" target="_blank" rel="noopener noreferrer">Desktop <svg class="icon tiny"><use href="#i-external" /></svg></a><a href="https://github.com/Anodex/anodex-mobile" target="_blank" rel="noopener noreferrer">Mobile <svg class="icon tiny"><use href="#i-external" /></svg></a><a href="https://github.com/Anodex/Anodex/blob/main/docs/FEATURES.md" target="_blank" rel="noopener noreferrer">Documentation <svg class="icon tiny"><use href="#i-external" /></svg></a></div><span class="footer-copyright">© <span id="year">2026</span> Anodex</span></footer>
 </body>
 </html>
