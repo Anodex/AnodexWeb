@@ -1,6 +1,12 @@
 import { PRODUCTS, PLATFORMS, assetsForPlatform, assetDescription, fetchLatestRelease } from './releases.js';
+import { startNebula } from './nebula.js';
 
 const stillMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+/* The fluid nebula becomes the page background wherever the browser can run it. When it
+   cannot, nothing is swapped in and the hero keeps the starfield below. */
+const nebula = startNebula(document.querySelector('.nebula'));
+if (nebula) document.documentElement.classList.add('nebula-active');
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
@@ -52,6 +58,7 @@ function startHeroVisual() {
 
   function render() {
     context.clearRect(0, 0, width, height);
+    if (nebula) return;
     const mobile = width <= 600;
     for (const star of stars) {
       const x = star.x * width * (mobile ? 1 : .48) + pointer.x * star.depth * 6;
@@ -85,7 +92,7 @@ function startHeroVisual() {
     lastTime = 0;
   }
   function play() {
-    if (frame || paused || !visible || document.hidden) return;
+    if (nebula || frame || paused || !visible || document.hidden) return;
     frame = requestAnimationFrame(tick);
   }
   function updateMotion() {
@@ -93,6 +100,7 @@ function startHeroVisual() {
     motionToggle.textContent = paused ? 'Play motion' : 'Pause motion';
     motionToggle.setAttribute('aria-pressed', String(paused));
     hero.classList.toggle('motion-paused', paused);
+    nebula?.setPaused(paused);
     stage.style.removeProperty('--tilt-x');
     stage.style.removeProperty('--tilt-y');
     pointer.x = 0;
@@ -126,6 +134,53 @@ function startHeroVisual() {
   updateMotion();
 }
 startHeroVisual();
+
+/* Landings. Each marked section fades and settles into place as it arrives and
+   recedes as it leaves, so the travel gaps between them open onto bare nebula.
+   Presence is derived from how much of a section overlaps the viewport, which
+   makes it symmetric - it fades on the way back up too, unlike a one-shot
+   reveal. */
+const landings = [...document.querySelectorAll('[data-vantage]')];
+if (landings.length && !stillMotion.matches) {
+  document.documentElement.classList.add('landing-ready');
+  const held = new Set();
+  let queued = false;
+
+  function updateLandings() {
+    queued = false;
+    const viewport = window.innerHeight;
+    for (const section of landings) {
+      const rect = section.getBoundingClientRect();
+      /* Measured against whichever is smaller, the section or the viewport, so a
+         section taller than the screen can still reach full presence. */
+      const span = Math.min(rect.height, viewport);
+      const overlap = Math.min(rect.bottom, viewport) - Math.max(rect.top, 0);
+      let presence = span > 0 ? (overlap / span - .12) / .5 : 0;
+      presence = Math.min(Math.max(presence, 0), 1);
+      presence = presence * presence * (3 - 2 * presence);
+      if (held.has(section)) presence = 1;
+      const offset = ((rect.top + rect.bottom) / 2 - viewport / 2) / viewport;
+      section.style.setProperty('--presence', presence.toFixed(3));
+      section.style.setProperty('--presence-y', `${(offset * 44 * (1 - presence)).toFixed(1)}px`);
+    }
+  }
+  function scheduleLandings() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(updateLandings);
+  }
+
+  window.addEventListener('scroll', scheduleLandings, { passive: true });
+  window.addEventListener('resize', scheduleLandings, { passive: true });
+  /* Keyboard focus must never come to rest on something faded out. */
+  document.addEventListener('focusin', (event) => {
+    held.clear();
+    const section = event.target.closest?.('[data-vantage]');
+    if (section) held.add(section);
+    updateLandings();
+  });
+  updateLandings();
+}
 
 /* Section reveals and the cursor spotlight on cards. */
 const revealables = document.querySelectorAll('[data-reveal]');

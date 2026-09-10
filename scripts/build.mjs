@@ -9,7 +9,7 @@ const previous = await lstat(output).catch((error) => { if (error.code !== 'ENOE
 if (previous?.isSymbolicLink()) throw new Error('Refusing to clean a symlinked output directory');
 if (previous) await rm(output, { recursive: true });
 await mkdir(output, { recursive: true });
-for (const file of ['index.html', 'styles.css', 'script.js', 'releases.js', 'CNAME', '.nojekyll', 'favicon.ico', 'favicon.png', 'apple-touch-icon.png']) {
+for (const file of ['index.html', 'styles.css', 'script.js', 'nebula.js', 'releases.js', 'CNAME', '.nojekyll', 'favicon.ico', 'favicon.png', 'apple-touch-icon.png']) {
   await cp(resolve(root, file), resolve(output, file));
 }
 const html = await readFile(resolve(output, 'index.html'), 'utf8');
